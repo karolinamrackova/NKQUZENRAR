@@ -1,0 +1,32 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7e9f0;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.chessboard {
+    margin: 20px auto;
+    width: 400px;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.hidden {
+    display: none;
+}
+
+#code {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #d23669;
+}
