@@ -13,11 +13,16 @@
         .image-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 15px; /* Space between the images */
+            justify-content: center; /* Center the grid horizontally */
         }
         .image-grid img {
-            width: 100%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Ensures the image covers the entire area */
+            object-position: center; /* Centers the image within the container */
             cursor: pointer;
+            border-radius: 5px; /* Optional: adds slight rounding to the corners */
         }
     </style>
 </head>
