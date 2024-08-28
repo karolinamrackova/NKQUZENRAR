@@ -1,18 +1,8 @@
 body {
     font-family: 'Arial', sans-serif;
-    color: #333;
+    color: midnightblue;
     text-align: center;
     padding: 20px;
-}
-
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.chessboard {
-    margin: 20px auto;
-    width: 400px;
 }
 
 #status {
