@@ -1,9 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .image-grid img {
+            width: 100%;
+            cursor: pointer;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
-<h1><a href="../chess/implementation-2/index.html">Click hereeeeee</a></h1>
+
+    <h1>Happy Birthday!</h1>
+    <p>Answer the questions to unlock your surprise!</p>
+
+    <div class="question" id="question1">
+        <p>Question 1: Which picture represents our best memory together?</p>
+        <div class="image-grid">
+            <img src="picture1.jpg" alt="Picture 1" onclick="checkAnswer(1, 'picture1')">
+            <img src="picture2.jpg" alt="Picture 2" onclick="checkAnswer(1, 'picture2')">
+            <img src="picture3.jpg" alt="Picture 3" onclick="checkAnswer(1, 'picture3')">
+            <img src="picture4.jpg" alt="Picture 4" onclick="checkAnswer(1, 'picture4')">
+            <img src="picture5.jpg" alt="Picture 5" onclick="checkAnswer(1, 'picture5')">
+            <img src="picture6.jpg" alt="Picture 6" onclick="checkAnswer(1, 'picture6')">
+            <img src="picture7.jpg" alt="Picture 7" onclick="checkAnswer(1, 'picture7')">
+            <img src="picture8.jpg" alt="Picture 8" onclick="checkAnswer(1, 'picture8')">
+            <img src="picture9.jpg" alt="Picture 9" onclick="checkAnswer(1, 'picture9')">
+        </div>
+    </div>
+
+    <div class="question hidden" id="question2">
+        <p>Question 2: Which city did we visit last summer?</p>
+        <button onclick="checkAnswer(2, 'paris')">Paris</button>
+        <button onclick="checkAnswer(2, 'rome')">Rome</button>
+        <button onclick="checkAnswer(2, 'london')">London</button>
+        <button onclick="checkAnswer(2, 'newyork')">New York</button>
+        <button onclick="checkAnswer(2, 'tokyo')">Tokyo</button>
+    </div>
+
+    <div class="question hidden" id="question3">
+        <p>Question 3: What is my favorite food?</p>
+        <button onclick="checkAnswer(3, 'pizza')">Pizza</button>
+        <button onclick="checkAnswer(3, 'sushi')">Sushi</button>
+        <button onclick="checkAnswer(3, 'burger')">Burger</button>
+        <button onclick="checkAnswer(3, 'pasta')">Pasta</button>
+        <button onclick="checkAnswer(3, 'tacos')">Tacos</button>
+    </div>
+
+    <div class="hidden" id="success">
+        <p>Congratulations! You got them all right!</p>
+        <a href="../chess/implementation-2/index.html">Click here for your surprise!</a>
+    </div>
+
+    <div class="hidden" id="failure">
+        <p>Oops, that's not right. Refresh the page to try again!</p>
+    </div>
+
+    <script>
+        function checkAnswer(questionNumber, answer) {
+            const correctAnswers = {
+                1: 'picture2',
+                2: 'rome',
+                3: 'sushi'
+            };
+
+            if (answer === correctAnswers[questionNumber]) {
+                document.getElementById('question' + questionNumber).classList.add('hidden');
+                if (questionNumber < 3) {
+                    document.getElementById('question' + (questionNumber + 1)).classList.remove('hidden');
+                } else {
+                    document.getElementById('success').classList.remove('hidden');
+                }
+            } else {
+                document.getElementById('question' + questionNumber).classList.add('hidden');
+                document.getElementById('failure').classList.remove('hidden');
+            }
+        }
+    </script>
+
 </body>
 </html>
