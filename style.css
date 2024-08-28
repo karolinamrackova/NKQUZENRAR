@@ -32,6 +32,7 @@ body {
   font-weight: 500;
   padding: 1.5em 2.2em;
   text-align: center;
+  margin: 20px;
 }
 
 .button, button, a:hover {
