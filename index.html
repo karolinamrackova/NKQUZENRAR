@@ -16,17 +16,22 @@
         .hidden {
             display: none;
         }
+        button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+        }
         .image-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
+            margin-top: 20px;
         }
         .image-grid img {
             width: 100%;
             cursor: pointer;
-        }
-        button {
-            margin: 5px;
         }
     </style>
 </head>
@@ -36,41 +41,35 @@
     <p>Answer the questions to unlock your surprise!</p>
 
     <div class="question" id="question1">
-        <p>Question 1: Which picture represents our best memory together?</p>
-        <div class="image-grid">
-            <img src="picture1.jpg" alt="Picture 1" onclick="checkAnswer(1, 'picture1')">
-            <img src="picture2.jpg" alt="Picture 2" onclick="checkAnswer(1, 'picture2')">
-            <img src="picture3.jpg" alt="Picture 3" onclick="checkAnswer(1, 'picture3')">
-            <img src="picture4.jpg" alt="Picture 4" onclick="checkAnswer(1, 'picture4')">
-            <img src="picture5.jpg" alt="Picture 5" onclick="checkAnswer(1, 'picture5')">
-            <img src="picture6.jpg" alt="Picture 6" onclick="checkAnswer(1, 'picture6')">
-            <img src="picture7.jpg" alt="Picture 7" onclick="checkAnswer(1, 'picture7')">
-            <img src="picture8.jpg" alt="Picture 8" onclick="checkAnswer(1, 'picture8')">
-            <img src="picture9.jpg" alt="Picture 9" onclick="checkAnswer(1, 'picture9')">
-        </div>
+        <p>Question 1: What is my favorite food?</p>
+        <button onclick="checkAnswer(1, 'pizza')">A large pepperoni pizza with extra cheese</button>
+        <button onclick="checkAnswer(1, 'sushi')">A selection of sushi rolls with wasabi and soy sauce</button>
+        <button onclick="checkAnswer(1, 'burger')">A juicy cheeseburger with fries and a cold soda</button>
+        <button onclick="checkAnswer(1, 'pasta')">A plate of creamy Alfredo pasta with garlic bread</button>
+        <button onclick="checkAnswer(1, 'tacos')">A trio of spicy beef tacos with salsa and guacamole</button>
     </div>
 
     <div class="question hidden" id="question2">
         <p>Question 2: Which city did we visit last summer?</p>
-        <button onclick="checkAnswer(2, 'paris')">Paris</button>
-        <button onclick="checkAnswer(2, 'rome')">Rome</button>
-        <button onclick="checkAnswer(2, 'london')">London</button>
-        <button onclick="checkAnswer(2, 'newyork')">New York</button>
-        <button onclick="checkAnswer(2, 'tokyo')">Tokyo</button>
+        <button onclick="checkAnswer(2, 'paris')">The romantic streets of Paris with its iconic Eiffel Tower</button>
+        <button onclick="checkAnswer(2, 'rome')">The historic ruins and vibrant culture of Rome</button>
+        <button onclick="checkAnswer(2, 'london')">The bustling city of London with its famous landmarks</button>
+        <button onclick="checkAnswer(2, 'newyork')">The fast-paced life of New York City, the city that never sleeps</button>
+        <button onclick="checkAnswer(2, 'tokyo')">The neon-lit streets and ancient temples of Tokyo</button>
     </div>
 
     <div class="question hidden" id="question3">
-        <p>Question 3: What is my favorite food?</p>
-        <button onclick="checkAnswer(3, 'pizza')">Pizza</button>
-        <button onclick="checkAnswer(3, 'sushi')">Sushi</button>
-        <button onclick="checkAnswer(3, 'burger')">Burger</button>
-        <button onclick="checkAnswer(3, 'pasta')">Pasta</button>
-        <button onclick="checkAnswer(3, 'tacos')">Tacos</button>
+        <p>Question 3: What is my favorite color?</p>
+        <button onclick="checkAnswer(3, 'red')">The bold and passionate shade of red</button>
+        <button onclick="checkAnswer(3, 'blue')">The calm and serene hue of blue</button>
+        <button onclick="checkAnswer(3, 'green')">The fresh and lively color of green</button>
+        <button onclick="checkAnswer(3, 'pink')">The sweet and playful shade of pink</button>
+        <button onclick="checkAnswer(3, 'yellow')">The bright and cheerful glow of yellow</button>
     </div>
 
     <div class="hidden" id="success">
         <p>Congratulations! You got them all right!</p>
-        <a href="../chess/implementation-2/index.html">Click here for your surprise!</a>
+        <a href="grid.html">Click here to proceed to the final challenge!</a>
     </div>
 
     <div class="hidden" id="failure">
@@ -80,9 +79,9 @@
     <script>
         function checkAnswer(questionNumber, answer) {
             const correctAnswers = {
-                1: 'picture2',
+                1: 'sushi',
                 2: 'rome',
-                3: 'sushi'
+                3: 'pink'
             };
 
             if (answer === correctAnswers[questionNumber]) {
