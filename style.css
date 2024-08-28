@@ -29,11 +29,7 @@ body {
     font-size: 1.5em;
     color: #d23669;
 }
-<!-- HTML !-->
-<button class="button-85" role="button">Button 85</button>
-
-/* CSS */
-.button-85 {
+.button, button, a {
   padding: 0.6em 2em;
   border: none;
   outline: none;
@@ -48,7 +44,7 @@ body {
   touch-action: manipulation;
 }
 
-.button-85:before {
+.button, button, a: before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -88,7 +84,7 @@ body {
   }
 }
 
-.button-85:after {
+.button, button, a: after {
   z-index: -1;
   content: "";
   position: absolute;
