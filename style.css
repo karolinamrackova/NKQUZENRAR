@@ -48,11 +48,11 @@ body {
   white-space: nowrap;
 }
 
-.button, button, a: hover {
+.button, button, a:hover {
   background-color: yellow;
 }
 
-.button, button, a: active {
+.button, button, a:active {
   background-color: magenta;
 }
 
