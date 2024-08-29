@@ -34,6 +34,9 @@ body {
   margin: 20px;
 }
 
+.button, button {
+    width: 60%;
+}
 .button:hover, button:hover, a:hover {
   background-color: gold;
   cursor: url('https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjEwMjctMDE2LnBuZw.png'), auto;
