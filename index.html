@@ -22,6 +22,27 @@
         .hidden {
             display: none;
         }
+        .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .grid-item img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        transition: transform 0.2s, border 0.2s;
+    }
+
+    .grid-item img:hover {
+        transform: scale(1.05);
+        border: 2px solid #000;
+    }
        </style>
 </head>
 <body>
@@ -58,6 +79,18 @@
         <button onclick="checkAnswer(3, 'yellow')">Neni to geopard ale gepard vole</button>
     </div>
 
+    <div class="question hidden" id="question4">
+    <p>Question 4: Which of these celebrities is Harry Styles?</p>
+    <div class="grid-container">
+        <div class="grid-item"><img src="harry1.jpg" alt="Option 1" onclick="checkAnswer(4, 'harry')"></div>
+        <div class="grid-item"><img src="celebrity2.jpg" alt="Option 2" onclick="checkAnswer(4, 'wrong')"></div>
+        <div class="grid-item"><img src="celebrity3.jpg" alt="Option 3" onclick="checkAnswer(4, 'wrong')"></div>
+        <div class="grid-item"><img src="celebrity4.jpg" alt="Option 4" onclick="checkAnswer(4, 'wrong')"></div>
+        <div class="grid-item"><img src="celebrity5.jpg" alt="Option 5" onclick="checkAnswer(4, 'wrong')"></div>
+        <div class="grid-item"><img src="celebrity6.jpg" alt="Option 6" onclick="checkAnswer(4, 'wrong')"></div>
+    </div>
+</div>
+
     <div class="hidden" id="success">
         <p>Congratulations! You got them all right!✨</p>
         <a href="grid.html">Click here to proceed to the next challenge!</a>
@@ -69,26 +102,26 @@
     </div>
 
     <script>
-        function checkAnswer(questionNumber, answer) {
-            const correctAnswers = {
-                1: 'pasta',
-                2: 'tokyo',
-                3: 'pink'
-            };
+    function checkAnswer(questionNumber, answer) {
+        const correctAnswers = {
+            1: 'pasta',
+            2: 'tokyo',
+            3: 'pink',
+            4: 'harry'
+        };
 
-            if (answer === correctAnswers[questionNumber]) {
-                document.getElementById('question' + questionNumber).classList.add('hidden');
-                if (questionNumber < 3) {
-                    document.getElementById('question' + (questionNumber + 1)).classList.remove('hidden');
-                } else {
-                    document.getElementById('success').classList.remove('hidden');
-                }
+        if (answer === correctAnswers[questionNumber]) {
+            document.getElementById('question' + questionNumber).classList.add('hidden');
+            if (questionNumber < 4) {
+                document.getElementById('question' + (questionNumber + 1)).classList.remove('hidden');
             } else {
-                document.getElementById('question' + questionNumber).classList.add('hidden');
-                document.getElementById('failure').classList.remove('hidden');
+                document.getElementById('success').classList.remove('hidden');
             }
+        } else {
+            document.getElementById('question' + questionNumber).classList.add('hidden');
+            document.getElementById('failure').classList.remove('hidden');
         }
-    </script>
-
+    }
+</script>
 </body>
 </html>
