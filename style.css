@@ -3,6 +3,7 @@ body {
     color: midnightblue;
     text-align: center;
     padding: 20px;
+    margin: auto;
 }
 #status {
     margin-top: 20px;
@@ -31,7 +32,7 @@ body {
   font-weight: 500;
   padding: 1.5em 2.2em;
   text-align: center;
-  margin: 20px;
+  margin: 20px auto;
 }
 
 .button, button {
