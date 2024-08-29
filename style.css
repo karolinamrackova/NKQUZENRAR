@@ -30,7 +30,7 @@ h1,h2,p {
   padding: 1.5em 2.2em;
   text-align: center;
   margin: 20px auto;
-  box-shadow: 10px 10px 10px grey;
+  box-shadow: 5px 5px 10px grey;
 }
 
 .button, button {
