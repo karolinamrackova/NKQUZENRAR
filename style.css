@@ -14,12 +14,6 @@ body {
     display: none;
 }
 
-#code {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #d23669;
-}
-/* CSS */
 .button, button, a {
   background-color: whitesmoke;
   color: midnightblue;
@@ -36,7 +30,7 @@ body {
 }
 
 .button, button {
-    width: 60%;
+    width: 80%;
 }
 .button:hover, button:hover, a:hover {
   background-color: gold;
