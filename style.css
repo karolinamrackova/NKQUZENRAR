@@ -4,7 +4,6 @@ body {
     text-align: center;
     padding: 20px;
 }
-
 #status {
     margin-top: 20px;
     font-size: 1.2em;
@@ -35,8 +34,18 @@ body {
   margin: 20px;
 }
 
-.button, button, a:hover {
+.button:hover, button:hover, a:hover {
+  background-color: gold;
+  cursor: url('https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjEwMjctMDE2LnBuZw.png'), auto;
+  border: 2px solid midnightblue;
+  border-radius: 10px;
+}
+
+.button:active, button:active, a:active {
   background-color: yellow;
+  cursor: url('https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjEwMjctMDE2LnBuZw.png'), auto;
+  border: 2px solid midnightblue;
+  border-radius: 10px;
 }
 a:visited {
     text-decoration:none;
