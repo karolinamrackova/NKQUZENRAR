@@ -47,7 +47,7 @@ body {
   border: 2px solid midnightblue;
   border-radius: 10px;
 }
-a:visited {
+a, a:active, a:hover, a:visited {
     text-decoration:none;
 }
 
