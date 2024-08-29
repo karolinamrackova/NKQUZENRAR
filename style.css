@@ -40,14 +40,12 @@ body {
 }
 .button:hover, button:hover, a:hover {
   background-color: gold;
-  cursor: url('https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjEwMjctMDE2LnBuZw.png');
   border: 2px solid midnightblue;
   border-radius: 10px;
 }
 
 .button:active, button:active, a:active {
   background-color: yellow;
-  cursor: url('https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjEwMjctMDE2LnBuZw.png'), auto;
   border: 2px solid midnightblue;
   border-radius: 10px;
 }
