@@ -9,9 +9,10 @@ body {
     margin-top: 20px;
     font-size: 1.2em;
 }
-h1,h2 {
-    margin: 30px;
+h1,h2,p {
+    margin: 10px auto 30px;
 }
+
 .hidden {
     display: none;
 }
