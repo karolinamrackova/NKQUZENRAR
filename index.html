@@ -53,6 +53,19 @@
             transition: transform 0.2s, border 0.2s;
           box-shadow: 0px 0px 15px lime;
         }
+        #failure-image, #success-image {
+    margin-top: 20px;
+}
+
+#failure-image img, #success-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px grey;
+}
+        #havlik_img {
+            max-width:500px;
+        }
     </style>
 </head>
 <body>
@@ -103,49 +116,66 @@
 
     <div class="hidden" id="failure">
         <p id="failure-message">That is incorrect!</p>
+            <div id="failure-image" class="hidden">
+        <img src="" alt="Failure Image" id="failure-image-display">
+    </div>
         <a href="index.html">Start Over</a>
     </div>
 
     <div class="hidden" id="success">
+        <p>That indeed is Havlíkova tyčinka!</p>
+        <img id="havlik_img" src="havlik.jiff" alt="hehe">
         <p>Congratulations! You got them all right!✨</p>
         <a href="grid.html">Click here to proceed to the next challenge!</a>
     </div>
 
     <script>
-        function checkAnswer(questionNumber, answer) {
-            const correctAnswers = {
-                1: 'pasta',
-                2: 'tokyo',
-                3: 'pink',
-                4: 'havlik3'
-            };
+       function checkAnswer(questionNumber, answer) {
+    const correctAnswers = {
+        1: 'pasta',
+        2: 'tokyo',
+        3: 'pink',
+        4: 'havlik3'
+    };
 
-            const wrongAnswerMessages = {
-                'havlik1': 'Nope, that is pizza.',
-                'havlik2': 'Nope, that is Miloš Zeman.',
-                'havlik3': 'Correct! That is Havlík!', // This is correct, so no message will be shown for this
-                'havlik4': 'Nope, that is a chicken nugget.',
-                'havlik5': 'Nope, that is naan.',
-                'havlik6': 'Nope, that is lázeňská oplatka.'
-            };
+    const answerMessages = {
+        'havlik1': 'Nope, that is pizza.',
+        'havlik2': 'Close! That is Václav Havel. Unfortunately, you are looking for Havlík, not Havel.',
+        'havlik4': 'Nope, that is a chicken nugget.',
+        'havlik5': 'Nope, that is naan.',
+        'havlik6': 'Nope, that is lázeňská oplatka.'
+    };
 
-            if (answer === correctAnswers[questionNumber]) {
-                document.getElementById('question' + questionNumber).classList.add('hidden');
-                if (questionNumber < 4) {
-                    document.getElementById('question' + (questionNumber + 1)).classList.remove('hidden');
-                } else {
-                    document.getElementById('success').classList.remove('hidden');
-                }
-            } else {
-                if (questionNumber === 4) {
-                    document.getElementById('failure-message').innerText = wrongAnswerMessages[answer];
-                } else {
-                    document.getElementById('failure-message').innerText = "That is incorrect!";
-                }
-                document.getElementById('question' + questionNumber).classList.add('hidden');
-                document.getElementById('failure').classList.remove('hidden');
-            }
+    const answerImages = {
+        'havlik1': 'img/pizza.webp',       // Replace with actual image path
+        'havlik2': 'img/havel.png', // Replace with actual image path
+        'havlik4': 'img/nugget.jiff',      // Replace with actual image path
+        'havlik5': 'img/naan.png',        // Replace with actual image path
+        'havlik6': 'img/oplatka.jpg'       // Replace with actual image path
+    };
+
+    if (answer === correctAnswers[questionNumber]) {
+        document.getElementById('question' + questionNumber).classList.add('hidden');
+        if (questionNumber < 4) {
+            document.getElementById('question' + (questionNumber + 1)).classList.remove('hidden');
+        } else {
+            document.getElementById('success').classList.remove('hidden');
+            document.getElementById('success-image-display').src = answerImages[answer];
+            document.getElementById('success-image').classList.remove('hidden');
         }
+    } else {
+        if (questionNumber === 4) {
+            document.getElementById('failure-message').innerText = answerMessages[answer];
+            document.getElementById('failure-image-display').src = answerImages[answer];
+            document.getElementById('failure-image').classList.remove('hidden');
+        } else {
+            document.getElementById('failure-message').innerText = "That is incorrect!";
+            document.getElementById('failure-image').classList.add('hidden');
+        }
+        document.getElementById('question' + questionNumber).classList.add('hidden');
+        document.getElementById('failure').classList.remove('hidden');
+    }
+}
     </script>
 </body>
 </html>
