@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,8 +30,18 @@
             cursor: pointer;
             border-color: transparent;
             border-radius: 5px; /* Optional: adds slight rounding to the corners */
+            box-shadow: 0px 0px 15px grey;
+        }
+                .image-grid img:hover {
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Ensures the image covers the entire area */
+            object-position: center; /* Centers the image within the container */
+            cursor: pointer;
+            border-color: transparent;
+            border-radius: 5px; /* Optional: adds slight rounding to the corners */
             background-color: magenta;
-            box-shadow: 5px 5px 10px grey;
+            box-shadow: 0px 0px 15px midnightblue;
         }
         #gridBody {
             padding: 20px;
@@ -44,20 +54,21 @@
 </head>
 <body>
 <div id="gridBody">
-    <h2 style="font-size: 36px;">So, you're an ass guy, huh?</h2>
-    <h2 style="font-size: 32px;">Come on then, make your choice</h2>
-    <p style="font-size: 18px;">The correct one will get you to the final challenge.</p>
+<h2 style="font-size: 36px;">The eyes are windows to the soul...</h2>
+<h2 style="font-size: 32px;">and also the gateway to your final challenge.</h2>
+<p style="font-size: 18px;">Choose wisely to unlock the path forward.</p>
 
     <div class="image-grid">
-        <a href="fail.html"><img src="picture1.jpg" alt="Picture 1"></a>
-        <a href="success.html"><img src="picture2.jpg" alt="Picture 2"></a>
-        <a href="fail.html"><img src="picture3.jpg" alt="Picture 3"></a>
-        <a href="fail.html"><img src="picture4.jpg" alt="Picture 4"></a>
-        <a href="fail.html"><img src="picture5.jpg" alt="Picture 5"></a>
-        <a href="fail.html"><img src="picture6.jpg" alt="Picture 6"></a>
-        <a href="fail.html"><img src="picture7.jpg" alt="Picture 7"></a>
-        <a href="fail.html"><img src="picture8.jpg" alt="Picture 8"></a>
-        <a href="fail.html"><img src="picture9.jpg" alt="Picture 9"></a>
+<a href="fail.html"><img src="1.PNG" alt="Picture 1"></a>
+<a href="success.html"><img src="2.PNG" alt="Picture 2"></a>
+<a href="fail.html"><img src="3.PNG" alt="Picture 3"></a>
+<a href="fail.html"><img src="4.PNG" alt="Picture 4"></a>
+<a href="fail.html"><img src="5.PNG" alt="Picture 5"></a>
+<a href="fail.html"><img src="6.PNG" alt="Picture 6"></a>
+<a href="fail.html"><img src="7.PNG" alt="Picture 7"></a>
+<a href="fail.html"><img src="8.PNG" alt="Picture 8"></a>
+<a href="fail.html"><img src="9.PNG" alt="Picture 9"></a>
+
     </div>
 </div>
 </body>
