@@ -31,8 +31,9 @@
         }
 
         .grid-item img {
-            width: 150px;
-            height: 150px;
+            width: 100%; /* Make the image take up the full width of the container */
+            height: 100%; /* Make the image take up the full height of the container */
+            object-fit: cover; /* Ensure the image covers the entire container area */
             cursor: pointer;
             border-color: transparent;
             border-radius: 5px;
@@ -41,8 +42,7 @@
         }
 
         .grid-item img:hover {
-            transform: scale(1.05);
-            border: 2px solid #000;
+          box-shadow: 5px 5px 10px magenta;
         }
     </style>
 </head>
