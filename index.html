@@ -23,28 +23,28 @@
             display: none;
         }
         .grid-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        justify-items: center;
-        align-items: center;
-    }
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-items: center;
+            align-items: center;
+        }
 
-    .grid-item img {
-        width: 150px;
-        height: 15px;
-        cursor: pointer;
-        border-color:transparent;
-        border-radius: 5px;
-        transition: transform 0.2s, border 0.2s;
-        box-shadow: 5px 5px 10px grey;
-    }
+        .grid-item img {
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            border-color: transparent;
+            border-radius: 5px;
+            transition: transform 0.2s, border 0.2s;
+            box-shadow: 5px 5px 10px grey;
+        }
 
-    .grid-item img:hover {
-        transform: scale(1.05);
-        border: 2px solid #000;
-    }
-       </style>
+        .grid-item img:hover {
+            transform: scale(1.05);
+            border: 2px solid #000;
+        }
+    </style>
 </head>
 <body>
 
@@ -61,7 +61,7 @@
     </div>
 
     <div class="question hidden" id="question2">
-        <p>Question 2: Jaké je Rusalky oficiální jméno a proč bylo takto zvoleno?
+        <p>Question 2: Jaké je Rusalky oficiální jméno a proč bylo takto zvoleno?</p>
         <p style="font-size:16px">(Musela mít z úředních důvodů v papírech jméno začínající na C.)</p>
         <button onclick="checkAnswer(2, 'paris')">Caroline Cloud Rusalka, obvious reasons</button>
         <button onclick="checkAnswer(2, 'rome')">Carevna, přišlo mi to cool a honoruje to její původ</button>
@@ -81,60 +81,62 @@
     </div>
 
     <div class="question hidden" id="question4">
-    <p>Question 4: Na kterém z obrázků je Havlíkova tyčinka?</p>
-    <div class="grid-container">
-        <div class="grid-item"><img src="img/havlik1.png" alt="Option 1" onclick="checkAnswer(4, 'havlik1')"></div>
-        <div class="grid-item"><img src="img/havlik2.png" alt="Option 2" onclick="checkAnswer(4, 'havlik2')"></div>
-        <div class="grid-item"><img src="img/havlik3.png" alt="Option 3" onclick="checkAnswer(4, 'havlik3')"></div>
-        <div class="grid-item"><img src="img/havlik4.png" alt="Option 4" onclick="checkAnswer(4, 'havlik4')"></div>
-        <div class="grid-item"><img src="img/havlik5.png" alt="Option 5" onclick="checkAnswer(4, 'havlik5')"></div>
-        <div class="grid-item"><img src="img/havlik6.png" alt="Option 6" onclick="checkAnswer(4, 'havlik6')"></div>
+        <p>Question 4: Na kterém z obrázků je Havlíkova tyčinka?</p>
+        <div class="grid-container">
+            <div class="grid-item"><img src="img/havlik1.png" alt="Option 1" onclick="checkAnswer(4, 'havlik1')"></div>
+            <div class="grid-item"><img src="img/havlik2.png" alt="Option 2" onclick="checkAnswer(4, 'havlik2')"></div>
+            <div class="grid-item"><img src="img/havlik3.png" alt="Option 3" onclick="checkAnswer(4, 'havlik3')"></div>
+            <div class="grid-item"><img src="img/havlik4.png" alt="Option 4" onclick="checkAnswer(4, 'havlik4')"></div>
+            <div class="grid-item"><img src="img/havlik5.png" alt="Option 5" onclick="checkAnswer(4, 'havlik5')"></div>
+            <div class="grid-item"><img src="img/havlik6.png" alt="Option 6" onclick="checkAnswer(4, 'havlik6')"></div>
+        </div>
     </div>
-</div>
+
+    <div class="hidden" id="failure">
+        <p id="failure-message">That is incorrect!</p>
+        <a href="index.html">Start Over</a>
+    </div>
 
     <div class="hidden" id="success">
         <p>Congratulations! You got them all right!✨</p>
         <a href="grid.html">Click here to proceed to the next challenge!</a>
     </div>
 
-    <div class="hidden" id="failure">
-        <p>That is incorrect!</p>
-                <a href="index.html">Start Over</a>
-    </div>
-
     <script>
-function checkAnswer(questionNumber, answer) {
-    const correctAnswers = {
-        1: 'pasta',
-        2: 'tokyo',
-        3: 'pink',
-        4: 'havlik3'
-    };
+        function checkAnswer(questionNumber, answer) {
+            const correctAnswers = {
+                1: 'pasta',
+                2: 'tokyo',
+                3: 'pink',
+                4: 'havlik3'
+            };
 
-    const wrongAnswerMessages = {
-        'havlik1': 'Nope, that is Havlik 1.',
-        'havlik2': 'Nope, that is Havlik 2.',
-        'havlik3': 'Correct! That is Havlik 3.', // This is correct, so no message will be shown for this
-        'havlik4': 'Nope, that is Havlik 4.',
-        'havlik5': 'Nope, that is Havlik 5.',
-        'havlik6': 'Nope, that is Havlik 6.'
-    };
+            const wrongAnswerMessages = {
+                'havlik1': 'Nope, that is Havlik 1.',
+                'havlik2': 'Nope, that is Havlik 2.',
+                'havlik3': 'Correct! That is Havlik 3.', // This is correct, so no message will be shown for this
+                'havlik4': 'Nope, that is Havlik 4.',
+                'havlik5': 'Nope, that is Havlik 5.',
+                'havlik6': 'Nope, that is Havlik 6.'
+            };
 
-    if (answer === correctAnswers[questionNumber]) {
-        document.getElementById('question' + questionNumber).classList.add('hidden');
-        if (questionNumber < 4) {
-            document.getElementById('question' + (questionNumber + 1)).classList.remove('hidden');
-        } else {
-            document.getElementById('success').classList.remove('hidden');
+            if (answer === correctAnswers[questionNumber]) {
+                document.getElementById('question' + questionNumber).classList.add('hidden');
+                if (questionNumber < 4) {
+                    document.getElementById('question' + (questionNumber + 1)).classList.remove('hidden');
+                } else {
+                    document.getElementById('success').classList.remove('hidden');
+                }
+            } else {
+                if (questionNumber === 4) {
+                    document.getElementById('failure-message').innerText = wrongAnswerMessages[answer];
+                } else {
+                    document.getElementById('failure-message').innerText = "That is incorrect!";
+                }
+                document.getElementById('question' + questionNumber).classList.add('hidden');
+                document.getElementById('failure').classList.remove('hidden');
+            }
         }
-    } else {
-        if (questionNumber === 4) {
-            alert(wrongAnswerMessages[answer]);
-        }
-        document.getElementById('question' + questionNumber).classList.add('hidden');
-        document.getElementById('failure').classList.remove('hidden');
-    }
-}
-</script>
+    </script>
 </body>
 </html>
